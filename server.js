@@ -15,7 +15,7 @@ if(port == null || port == ""){
 
 app.use(express.static("public"));
 
-let connectionString = "mongodb+srv://productivityAppUser:productivityAppUser123@cluster0.uuyvs.mongodb.net/todoApp?retryWrites=true&w=majority";
+let connectionString = "INPUT_STRING_WITH_MongoDB_DATABASE_NAME_AND_YOUR_CREDENTIALS";
 mongodb.connect(connectionString, {useNewUrlParser: true, useUnifiedTopology: true}, function(err, client){
     db = client.db();
     app.listen(port);
@@ -29,7 +29,7 @@ app.use(express.urlencoded({extended: false}));
 function passwordProtected (req, res, next){
     res.set("WWW-Authenticate", 'Basic realm = "Simple productivity app"');
     console.log(req.headers.authorization)
-    if(req.headers.authorization == "Basic cHJvZHVjdGl2ZUFudDpwcm9kdWN0aXZlQW50MTIz"){
+    if(req.headers.authorization == "INPUT_LINK_WITH_AUTHORIZATION"){
         next();
     } else {
         res.status(401).send("Authentication required")
