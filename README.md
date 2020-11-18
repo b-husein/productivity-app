@@ -1,6 +1,6 @@
 # Productivity app
 
-### A simple todo list;
+### A simple todo list with security login;
 
 Live version is deployed on [Heroku.](https://my-productivity-app.herokuapp.com/)
 
